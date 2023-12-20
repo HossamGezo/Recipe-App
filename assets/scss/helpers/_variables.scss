@@ -7,6 +7,7 @@ $color-breakpoints: (
   // Blue Shades
   blu-color-01:#085C94,
   blu-color-02:#0B9FE5,
+  blu-color-03:#5762B1,
   // Green Shades
   grn-color-01:#008000,
   grn-color-02:#129A67,
@@ -39,4 +40,5 @@ $color-breakpoints: (
 // BoxShadows BreakPoints
 $boxshadow-breakpoints: (
   boxshadow-01:rgba(0, 0, 0, 0.45) 0px 25px 20px -20px,
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
 );

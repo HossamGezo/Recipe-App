@@ -3,3 +3,101 @@
 @use "helpers/global";
 
 // Begining Of The Project
+
+.head {
+  background-color: color(blu-color-03);
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+.recipe-app {
+  @include flex(null, null, space-between, center, 20px);
+  height: 80vh;
+  .search-recipe {
+    flex: 1;
+    height: 100%;
+    background-color: color(blu-color-03);
+    border-radius: 10px;
+    @include flex(column, null, center, center, null);
+    &--head {
+      margin-bottom: 20px;
+      color: white;
+      font-size: 35px;
+    }
+    &--search {
+      input {
+        width: 500px;
+        padding: 20px;
+        border-radius: 7px;
+        margin: 0;
+        caret-color: color(blu-color-03);
+      }
+      i {
+        padding: 20px;
+        background-color: color(blk-color-01);
+        color: color(wht-color-01);
+        border-radius: 7px;
+        margin: 0;
+      }
+    }
+  }
+  .recipes {
+    flex: 1;
+    height: 100%;
+    padding: 30px 0;
+    border-radius: 10px;
+    background-color: color(wht-color-01);
+    overflow: auto;
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: color(gry-color-01);
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: color(blu-color-03);
+      opacity: 0.8;
+      @include transition;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @include grid(400px, 30px);
+    @include flex(null, null, center, null, null);
+    .recipe {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 400px;
+      img {
+        width: 300px;
+        height: 60%;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+      &-body {
+        padding: 10px;
+        @include flex(column, null, center, center, null);
+        &--head {
+          margin-bottom: 30px;
+        }
+        .myBtn {
+          width: 150px;
+          padding: 15px;
+          border-radius: 10px;
+          background-color: color(blu-color-03);
+          color: color(wht-color-01);
+          font-size: 18px;
+          &:hover {
+            opacity: 0.9;
+          }
+          &:active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

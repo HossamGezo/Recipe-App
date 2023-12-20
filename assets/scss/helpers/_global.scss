@@ -21,9 +21,10 @@ button,
 textarea,
 select {
   font-family: inherit;
+  border: none;
+  outline: none;
 }
 .container {
-  width: 80%;
-  padding: 0 10px;
+  padding: 0 30px;
   margin: 0 auto;
 }

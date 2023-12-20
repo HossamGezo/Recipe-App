@@ -8,6 +8,13 @@
   gap: $gap;
 }
 
+// 2 --- Grid Mixin
+@mixin grid($width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+  gap: $gap;
+}
+
 // 3 --- Animation Mixin
 @mixin animation($name, $time, $delay) {
   animation: $name $time $delay;
@@ -16,7 +23,7 @@
   }
 }
 
-// 3 --- Transition Mixin
+// 4 --- Transition Mixin
 @mixin transition($transition: 0.3s) {
   transition: $transition linear;
 }
