@@ -12,10 +12,12 @@
   font-size: 45px;
   margin-bottom: 50px;
 }
+
 .recipe-app {
   @include flex(null, null, space-between, center, 20px);
   height: 80vh;
   .search-recipe {
+    box-shadow:rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     flex: 1;
     height: 100%;
     background-color: color(blu-color-03);
@@ -27,61 +29,51 @@
       font-size: 35px;
     }
     &--search {
+      @include flex(null, null, center, center, null);
       input {
         width: 500px;
         padding: 20px;
-        border-radius: 7px;
+        border-radius: 7px 0  0 7px;
         margin: 0;
         caret-color: color(blu-color-03);
+        color: color(blu-color-03);
       }
       i {
         padding: 20px;
         background-color: color(blk-color-01);
         color: color(wht-color-01);
-        border-radius: 7px;
+        border-radius: 0 7px 7px 0;
         margin: 0;
+        cursor: pointer;
       }
     }
   }
   .recipes {
     flex: 1;
     height: 100%;
-    padding: 30px 0;
+    padding: 35px;
     border-radius: 10px;
     background-color: color(wht-color-01);
-    overflow: auto;
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background-color: color(gry-color-01);
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: color(blu-color-03);
-      opacity: 0.8;
-      @include transition;
-      &:hover {
-        opacity: 1;
-      }
-    }
-    @include grid(400px, 30px);
-    @include flex(null, null, center, null, null);
+    box-shadow:rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    @include scrollBar(10px, color(gry-color-01), color(blu-color-03));
+    @include grid(300px, 30px);
     .recipe {
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       border-radius: 10px;
+      position: relative;
       overflow: hidden;
-      height: 400px;
+      height: 500px;
       img {
-        width: 300px;
+        width: 100%;
         height: 60%;
         object-fit: cover;
         margin-bottom: 20px;
       }
       &-body {
         padding: 10px;
-        @include flex(column, null, center, center, null);
+        text-align: center;
         &--head {
-          margin-bottom: 30px;
+          margin-bottom: 40px;
         }
         .myBtn {
           width: 150px;
@@ -90,6 +82,10 @@
           background-color: color(blu-color-03);
           color: color(wht-color-01);
           font-size: 18px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 20px;
           &:hover {
             opacity: 0.9;
           }
@@ -99,5 +95,42 @@
         }
       }
     }
+  }
+}
+
+.recipe-detailes {
+  background-color: color(blu-color-03);
+  color: color(wht-color-01);
+  width: 789px;
+  padding: 20px;
+  border-radius: 10px;
+  position: fixed;
+  top: 161.5px;
+  height: 80vh;
+  @include scrollBar(10px, color(gry-color-01), color(blu-color-03));
+  &.show-detailes {
+    display: none;
+  }
+  i {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    @include transition;
+    &:hover {
+      color: color(red-color-01);
+    }
+  }
+  h2 {
+    margin-bottom: 50px;
+  }
+  h3 {
+    margin-bottom: 50px;
+  }
+  p {
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 20px;
   }
 }
