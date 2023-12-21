@@ -1,4 +1,5 @@
 // ! ------------------------------------------- Variables
+
 let searchInput = document.querySelector(".search-input");
 let search = document.querySelector(".search");
 let recipes = document.querySelector(".recipes");
@@ -6,6 +7,7 @@ let recipeDetailes = document.querySelector(".recipe-detailes");
 let close = document.querySelector(".close");
 
 // ! ------------------------------------------- Events
+
 search.addEventListener("click", getInputValue);
 searchInput.addEventListener("keydown", pressEnter);
 close.addEventListener("click", closeRecipeDetailes)
@@ -74,5 +76,3 @@ function showDetailes(data) {
 function closeRecipeDetailes() {
   recipeDetailes.classList.add("show-detailes");
 }
-
-// https://hossamgezo.github.io/Recipe-App/
